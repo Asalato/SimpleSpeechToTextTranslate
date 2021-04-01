@@ -101,7 +101,7 @@ function editStyleByClass(propertyName, value){
 window.addEventListener('load', () => {
     const agent = window.navigator.userAgent.toLowerCase();
     const chrome = (agent.indexOf('chrome') !== -1) && (agent.indexOf('edge') === -1) && (agent.indexOf('opr') === -1);
-    if(!chrome) alert('This application will not work with web browsers other than Chrome.')
+    if(!chrome) alert('This application will not work with web browsers other than Chrome.\nこのアプリケーションはChrome上でしか動作しません。')
 
     startButton = document.getElementById("start");
     stopButton = document.getElementById("stop");
