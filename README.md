@@ -1,0 +1,2 @@
+# SimpleSpeechToTextTranslate
+非常に不親切な最小限度の拡張性を持つリアルタイム翻訳アプリ
