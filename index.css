@@ -1,0 +1,65 @@
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+div{
+    display: flex;
+    position: relative;
+}
+
+h1{
+    display: flex;
+    width: fit-content;
+    margin: 0 2rem 0 0;
+}
+
+.result{
+    width: 100%;
+    flex-direction: column;
+}
+
+.header{
+    flex-direction: row;
+    margin: 0.5rem;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.input{
+    flex-direction: column;
+    margin: 0;
+}
+
+.box{
+    padding: 0.5rem;
+    margin: 0.2rem;
+    height: 7rem;
+    border: medium solid black;
+    align-items: flex-end;
+}
+
+.box div{
+    position: absolute;
+    bottom: 0;
+}
+
+#status{
+    border: thin double black;
+    border-radius: 5%;
+    margin-left: auto;
+    height: 100%;
+    width: 10rem;
+    justify-content: center;
+}
+
+.editor{
+    margin: 0.5rem;
+    flex-direction: column;
+    width: 15rem;
+}
+
+.elm{
+    align-items: center;
+    justify-content: space-between;
+}
