@@ -27,11 +27,15 @@
     </div>
     <div class="elm">
         <div>Text Color</div>
-        <input type="color" value="#FFFFFF" oninput="editStyleByClass('color', this.value)">
+        <input type="color" value="#000000" oninput="editStyleByClass('color', this.value)">
     </div>
     <div class="elm">
         <div>Font Size</div>
         <input type="range" value="1" min="0" max="3" step="0.05" oninput="editStyleByClass('font-size', this.value + 'rem')">
+    </div>
+    <div class="elm">
+        <div>Font Family</div>
+        <input type="text" value="" oninput="editStyleByClass('font-family', this.value)" class="ffinput">
     </div>
 </div>
 </body>

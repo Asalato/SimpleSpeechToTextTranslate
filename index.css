@@ -48,8 +48,8 @@ h1{
     border: thin double black;
     border-radius: 5%;
     margin-left: auto;
-    height: 100%;
-    width: 10rem;
+    padding: 0.2rem;
+    width: 12rem;
     justify-content: center;
 }
 
@@ -62,4 +62,8 @@ h1{
 .elm{
     align-items: center;
     justify-content: space-between;
+}
+
+.ffinput{
+    width: 6rem;
 }
