@@ -37,6 +37,7 @@ h1{
     height: 7rem;
     border: medium solid black;
     align-items: flex-end;
+    overflow: hidden;
 }
 
 .box div{
@@ -56,7 +57,7 @@ h1{
 .editor{
     margin: 0.5rem;
     flex-direction: column;
-    width: 15rem;
+    width: 20rem;
 }
 
 .elm{
