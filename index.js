@@ -96,7 +96,7 @@ function editStyleByClass(propertyName, value){
     for (let i = 0; i < all.length; i++) {
         all[i].style[propertyName] = value;
     }
-    document.cookie = propertyName + '=' + value;
+    document.cookie = '_style_' + propertyName + '=' + value;
 }
 
 window.addEventListener('load', () => {
@@ -104,10 +104,12 @@ window.addEventListener('load', () => {
     const chrome = (agent.indexOf('chrome') !== -1) && (agent.indexOf('edge') === -1) && (agent.indexOf('opr') === -1);
     if(!chrome) alert('This application will not work with web browsers other than Chrome.\nこのアプリケーションはChrome上でしか動作しません。')
 
-    const cookies = document.cookie.split(';');
+    const cookies = document.cookie.split('; ');
     for(let i = 0; i < cookies.length; ++i)
     {
-        const [key, value] = cookies[i].split('=');
+        if(!cookies[i].startsWith('_style_')) continue;
+        const [key, value] = cookies[i].slice(7).split('=');
+        console.log(key + ":" + value)
         editStyleByClass(key, value);
     }
 
