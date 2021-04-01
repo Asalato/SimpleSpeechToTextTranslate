@@ -36,6 +36,14 @@
         <div>Font Family</div>
         <input type="text" value="" oninput="editStyleByClass('font-family', this.value)" class="ffinput">
     </div>
+    <div class="elm">
+        <div>Border Color</div>
+        <input type="color" value="#000000" id="bc" oninput="editStyleByClass('-webkit-text-stroke', `${document.getElementById('bw').value}rem ${this.value}`)">
+    </div>
+    <div class="elm">
+        <div>Border Width</div>
+        <input type="range" value="0" min="0" max="0.1" step="0.01" id="bw" oninput="editStyleByClass('-webkit-text-stroke', `${this.value}rem ${document.getElementById('bc').value}`)">
+    </div>
 </div>
 </body>
 </html>
