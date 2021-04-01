@@ -107,7 +107,7 @@ window.addEventListener('load', () => {
     const cookies = document.cookie.split(';');
     for(let i = 0; i < cookies.length; ++i)
     {
-        const [key, value] = cookies[i].split(':');
+        const [key, value] = cookies[i].split('=');
         editStyleByClass(key, value);
     }
 
