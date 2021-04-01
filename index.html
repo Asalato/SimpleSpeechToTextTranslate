@@ -13,6 +13,10 @@
         <input type="button" value="Start" id="start" onclick="startRecognition()">
         <input type="button" value="Stop" id="stop" onclick="stopRecognition()" disabled>
     </div>
+    <div class="transbool">
+        <input type="checkbox" onclick="setUseTranslation(this.value)">
+        <div>Translating</div>
+    </div>
     <div id="status"></div>
 </div>
 <div class="result">

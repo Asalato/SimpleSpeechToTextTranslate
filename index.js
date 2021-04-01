@@ -21,6 +21,10 @@ function Translate(str, langFrom, langTo, action){
     });
 }
 
+let useTranslation = false;
+function setUseTranslation(value){
+    useTranslation = value;
+}
 
 function ReDraw() {
     let r = [];
@@ -36,7 +40,7 @@ function ReDraw() {
     resultRaw.innerHTML = '<div>' + str + '</div';
     if(str === '')
         resultTranslated.innerHTML = '<div></div>';
-    else if(str !== Last)
+    else if(str !== Last && useTranslation)
         Translate(str, "ja", "en", (r) => resultTranslated.innerHTML = '<div>' + r + '</div>');
     Results = r;
     Last = str;
