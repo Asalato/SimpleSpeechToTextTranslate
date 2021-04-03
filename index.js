@@ -18,6 +18,7 @@ function Translate(str, langFrom, langTo, action){
     fetch(uri).then(res => res.json()).then(j =>
     {
         if(j.code === 200) action(j.text);
+        else console.error(j.text);
     });
 }
 
@@ -38,10 +39,21 @@ function ReDraw() {
     }
     str += Temp;
     resultRaw.innerHTML = '<div>' + str + '</div';
+
+    const fontSize = parseFloat(document.getElementsByClassName('box')[0].style['font-size']) * parseFloat(getComputedStyle(document.documentElement).fontSize);
+    // 出力がオーバーフローしないところまで改行を入れる
+    for(let i = 0; i < Math.floor((resultRaw.clientHeight - resultRaw.childNodes[0].clientHeight) / fontSize); ++i)
+        resultRaw.childNodes[0].innerHTML += '<br>&nbsp;';
+
     if(str === '')
         resultTranslated.innerHTML = '<div></div>';
     else if(str !== Last && useTranslation)
-        Translate(str, "ja", "en", (r) => resultTranslated.innerHTML = '<div>' + r + '</div>');
+        Translate(str, "ja", "en", (r) => {
+            resultTranslated.innerHTML = '<div>' + r + '</div>';
+            for(let i = 0; i < Math.floor((resultTranslated.clientHeight - resultTranslated.childNodes[0].clientHeight) / fontSize); ++i)
+                resultTranslated.childNodes[0].innerHTML += '<br>&nbsp;';
+        });
+
     Results = r;
     Last = str;
 }
@@ -113,7 +125,6 @@ window.addEventListener('load', () => {
     {
         if(!cookies[i].startsWith('_style_')) continue;
         const [key, value] = cookies[i].slice(7).split('=');
-        console.log(key + ":" + value)
         editStyleByClass(key, value);
     }
 
@@ -124,5 +135,7 @@ window.addEventListener('load', () => {
     status = document.getElementById("status");
     initRecognition();
 
+    Temp = '出力結果';
+    ReDraw();
     setInterval(ReDraw, timeout);
 });
