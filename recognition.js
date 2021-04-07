@@ -107,26 +107,10 @@ function stopRecognition() {
     stopButton.disabled = true;
 }
 
-function editStyleByClass(propertyName, value){
-    const all = document.getElementsByClassName('box');
-    for (let i = 0; i < all.length; i++) {
-        all[i].style[propertyName] = value;
-    }
-    document.cookie = '_style_' + propertyName + '=' + value;
-}
-
 window.addEventListener('load', () => {
     const agent = window.navigator.userAgent.toLowerCase();
     const chrome = (agent.indexOf('chrome') !== -1) && (agent.indexOf('edge') === -1) && (agent.indexOf('opr') === -1);
     if(!chrome) alert('This application will not work with web browsers other than Chrome.\nこのアプリケーションはChrome上でしか動作しません。')
-
-    const cookies = document.cookie.split('; ');
-    for(let i = 0; i < cookies.length; ++i)
-    {
-        if(!cookies[i].startsWith('_style_')) continue;
-        const [key, value] = cookies[i].slice(7).split('=');
-        editStyleByClass(key, value);
-    }
 
     startButton = document.getElementById("start");
     stopButton = document.getElementById("stop");

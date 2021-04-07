@@ -55,9 +55,14 @@ h1{
 }
 
 .editor{
-    margin: 0.5rem;
+    margin: 1rem;
     flex-direction: column;
-    width: 20rem;
+}
+
+#css-editor {
+    position: absolute;
+    height: 20rem;
+    width: 30rem;
 }
 
 .elm{

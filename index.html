@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Simple StTT</title>
-    <script src="index.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.js"></script>-->
+    <script src="ace/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="ace/mode-text.js" type="text/javascript" charset="utf-8"></script>
+    <script src="recognition.js"></script>
+    <script src="reformat.js"></script>
     <link rel="stylesheet" href="index.css">
+    <style id="css-editable"></style>
 </head>
 <body>
 <div class="header">
@@ -20,38 +25,11 @@
     <div id="status"></div>
 </div>
 <div class="result">
-    <div id="raw" class="box"></div>
-    <div id="translated" class="box"></div>
+    <div id="raw" class="box raw"></div>
+    <div id="translated" class="box trans"></div>
 </div>
 <div class="editor">
-    <div class="elm">
-        <div>Background Color</div>
-        <input type="color" value="#FFFFFF" oninput="editStyleByClass('backgroundColor', this.value)">
-    </div>
-    <div class="elm">
-        <div>Text Color</div>
-        <input type="color" value="#000000" oninput="editStyleByClass('color', this.value)">
-    </div>
-    <div class="elm">
-        <div>Font Size</div>
-        <input type="range" value="1" min="0" max="3" step="0.05" oninput="editStyleByClass('font-size', this.value + 'rem')">
-    </div>
-    <div class="elm">
-        <div>Font Family</div>
-        <input type="text" value="" oninput="editStyleByClass('font-family', this.value)" class="ffinput">
-    </div>
-    <div class="elm">
-        <div>Border Color</div>
-        <input type="color" value="#000000" id="bc" oninput="editStyleByClass('-webkit-text-stroke', `${document.getElementById('bw').value}rem ${this.value}`)">
-    </div>
-    <div class="elm">
-        <div>Border Width</div>
-        <input type="range" value="0" min="0" max="0.1" step="0.01" id="bw" oninput="editStyleByClass('-webkit-text-stroke', `${this.value}rem ${document.getElementById('bc').value}`)">
-    </div>
-    <div class="elm">
-        <div>Display Area Height</div>
-        <input type="range" value="7" min="1" max="10" step="0.05" oninput="editStyleByClass('height', this.value + 'rem')">
-    </div>
+    <div id="css-editor"></div>
 </div>
 </body>
 </html>
