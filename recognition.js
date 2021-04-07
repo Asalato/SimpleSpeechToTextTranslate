@@ -40,7 +40,7 @@ function ReDraw() {
     str += Temp;
     resultRaw.innerHTML = '<div>' + str + '</div';
 
-    const fontSize = parseFloat(document.getElementsByClassName('box')[0].style['font-size']) * parseFloat(getComputedStyle(document.documentElement).fontSize);
+    const fontSize = parseFloat(getComputedStyle(document.getElementsByClassName('box')[0]).fontSize);
     // 出力がオーバーフローしないところまで改行を入れる
     for(let i = 0; i < Math.floor((resultRaw.clientHeight - resultRaw.childNodes[0].clientHeight) / fontSize); ++i)
         resultRaw.childNodes[0].innerHTML += '<br>&nbsp;';

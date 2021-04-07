@@ -1,10 +1,10 @@
 let editor, style;
 const defaultValue = `
-background-color: #FFFFFF;
-color: #000000;
+background-color: #FFF;
+color: #000;
 font-size: 2rem;
 font-family: arial;
--webkit-text-stroke: #000000;
+-webkit-text-stroke: 0rem #000;
 height: 7rem;
 `;
 
